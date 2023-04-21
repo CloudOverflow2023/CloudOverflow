@@ -1,7 +1,7 @@
 """
 From chat gpt OpenFMB CSV example:
 
-    Time,Grid_Voltage,Grid_Frequency,Grid_Active_Power,Grid_Reactive_Power,Grid_Apparent_Power
+    Time,Grid_Voltage,Grid_Freq uency,Grid_Active_Power,Grid_Reactive_Pow er,Grid_Apparent_Power
     0,240.1,60.0,100.0,50.0,150.0
     1,240.2,60.2,110.0,60.0,170.0
     2,240.3,60.4,120.0,70.0,190.0
@@ -13,6 +13,31 @@ From chat gpt OpenFMB CSV example:
             This is the timestamp of the data point.
         Grid_Voltage: 
             This is the voltage of the grid at the given time.
+"""
+      #           .----.
+      #.---------. | == |
+      #|.-"""""-.| |----|
+      #||       || | == |
+      #||       || |----|
+      #|'-.....-'| |::::|
+      #`"")---(""` |___.|
+     #/:::::::::::\" _  "
+    #/:::=======:::\`\`\
+ #`"""""""""""""`  '-'
+"""
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⡿⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⠟⠁⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⢀⣠⣤⣤⣤⣀⣀⠈⠋⠉⣁⣠⣤⣤⣤⣀⡀⠀⠀
+⠀⢠⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⡀
+⣠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠋⠀
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡏⠀⠀⠀
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀⠀⠀
+⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣤⣀
+⠀⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠁
+⠀⠀⠙⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠁⠀
+⠀⠀⠀⠈⠙⢿⣿⣿⣿⠿⠟⠛⠻⠿⣿⣿⣿⡿⠋⠀⠀⠀
         Grid_Frequency: 
             This is the frequency of the grid at the given time.
         Grid_Active_Power: 
