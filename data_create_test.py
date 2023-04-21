@@ -24,6 +24,30 @@ From chat gpt OpenFMB CSV example:
 
 
 """
+import random
+import time
+
+clock = 0
 
 def new_datapoint(time_stamp):
-    return output
+    Time = time_stamp
+    """Grid_Voltage = None
+    Grid_Frequency = None
+    Grid_Active_Power = None
+    Grid_Reactive_Power = None
+    Grid_Apparent_Power = None"""
+    
+    Grid_Voltage = round(random.uniform(239, 241), 1)
+    Grid_Frequency = round(random.uniform(59, 62), 1)
+    Grid_Active_Power = round(random.uniform(90, 200), 1)
+    Grid_Reactive_Power = round(random.uniform(40, 101), 1)
+    Grid_Apparent_Power = round(random.uniform(100, 300), 1)
+    
+    return [Time,Grid_Voltage,Grid_Frequency,Grid_Active_Power,Grid_Reactive_Power,Grid_Apparent_Power]
+
+while(True):
+    data = new_datapoint(clock)
+    clock += 1
+    print(data)
+    time.sleep(1)
+    
