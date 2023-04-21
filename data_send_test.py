@@ -22,6 +22,7 @@ class RTU:
         self.status = "idle"
         self.macaddress = "00-00-00-00-00-00"
 
+
     def CalculatePotentialPowerOutput(self):
         
         return
