@@ -62,5 +62,7 @@ def main():#main
     if(randHouse.HomeOwnersLimit <= randHouse.CurrentChargeStatusPercentage):
         if((can_discharge())):
             print(can_sell_power())""" 
-    print(main_output)
+    #print(main_output)
+
+    #return main_output
 main()
