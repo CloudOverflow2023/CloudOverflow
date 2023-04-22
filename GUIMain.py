@@ -5,7 +5,14 @@ import random
 
 from duck_curve import main_output
 
+def test():
 
+    mylist = ["apple", "banana", "cherry"]
+    num = (random.randint(0, 2))
+    print(num)
+    word = mylist[num]
+
+    return word
 
 counter = 0
 # Define the image file paths
@@ -32,6 +39,12 @@ def update_image(index):
 # Start the image loop
     print(main_output)
 
+frame = tk.Frame(window)
+frame.pack(side=tk.LEFT)
+text = tk.Text(frame, width=30, height=10)
+text.pack()
+text.insert(tk.END, "This is some sample text.")
+
 n=0
 while n < 24:
     #update_image(random.randint(0, 2))
@@ -40,10 +53,16 @@ while n < 24:
     input("")
     if main_output[n][1] == 'can discharge':
         update_image(2)
+        text.delete('1.0', tk.END)
+        text.insert(tk.END, f"can discharge at {n}:00 (24 Hour Time)")
     elif main_output[n][1] == 'can charge':
         update_image(0)
+        text.delete('1.0', tk.END)
+        text.insert(tk.END, f"can charge at {n}:00 (24 Hour Time)")
     elif main_output[n][1] == 'idling':
         update_image(1)
+        text.delete('1.0', tk.END)
+        text.insert(tk.END, f"is idling at {n}:00 (24 Hour Time)")
     else:
         print("Something went wrong!")
 
