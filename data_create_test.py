@@ -52,6 +52,7 @@ From chat gpt OpenFMB CSV example:
 import random
 import time
 import csv
+import datetime
 
 filename = 'mock_data.csv'
 fields = ['Time','MW_MegaWatts']
@@ -76,13 +77,15 @@ def write_to_csv(a_list, filename):
         # writing data rows
         writer.writerows(a_list)
     #return true false depending if was able to write to file or not, could also just not return anything if feeling like being lazy
-Time = 0
 
-while True:   
+
+
+while True:
+    now = datetime.datetime.now()
+    Time = str(now.strftime('%X')) 
     chat_context_list = create_list_from_csv(filename)
     MW_MegaWatts = round(random.uniform(239, 241), 1)
     chat_context_list.append({'Time':Time, 'MW_MegaWatts':MW_MegaWatts})
     write_to_csv(chat_context_list, filename)
-    Time += 1
     time.sleep(1)
     
