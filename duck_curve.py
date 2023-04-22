@@ -9,12 +9,12 @@ def can_discharge(): # during the times before 8:30am and after 6pm gigawatt can
         csvreader = csv.reader(csvfile)
         for row in csvreader:
             if len(row) > 0:
-                min = row[0]
-            if (int(min) < 510):
-                print ((float(min))/60)
+                hr = row[0]
+            if (int(hr) < 8):
+                print ((float(hr)))
                 print ("can discharge")
-            if(int(min) >= 1080):
-                print ((float(min))/60)
+            if(int(hr) >= 17):
+                print ((float(hr)))
                 print ("can discharge")
             """else:
                 return False"""
@@ -24,9 +24,9 @@ def can_charge(): # From 9am to 5:30pm power can be charged from the grid to the
         csvreader = csv.reader(csvfile)
         for row in csvreader:
             if len(row) > 0:
-                min = row[0]
-                if ((540) <= int(min) <= (1050)):
-                    print ((float(min))/60)
+                hr = row[0]
+                if ((9) <= int(hr) < (17)):
+                    print ((float(hr)))
                     print ("can charge")
                 """else:
                     return False"""
@@ -47,12 +47,12 @@ def idle():# this is during times 8:30am to 9am and 5:30pm to 6pm
         csvreader = csv.reader(csvfile)
         for row in csvreader:
             if len(row) > 0:
-                min = row[0]
-                if ((510) <= int(min) <= (540)):
-                    print ((float(min))/60)
+                hr = row[0]
+                if ((8) <= int(hr) < (9)):
+                    print ((float(hr)))
                     print ("idling")
-                if((1050) <= int(min) <= (1080)):
-                    print ((float(min))/60)
+                if((17) <= int(hr) < (18)):
+                    print ((float(hr)))
                     print ("idling")
                 """else:
                     return False"""
