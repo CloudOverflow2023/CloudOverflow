@@ -8,7 +8,7 @@ def total_grid_power():
     return total_grid_power
 ###########################
 
-def can_sell_power():# during the hr 6pm to early morning power can be sold to the grid
+def can_sell_power():# during the hr 6pm to early morning power can be sold to the grid reads from the csv file
     end_flag = False
     for row in csvreader:
         megawatt = row[1]
