@@ -48,7 +48,10 @@ TO ADD
         Scalability
         Mudularity
 
-    
+    Drawings/pictures/diagrams:
+        four prong outlet with No control, medium control, full control button
+        plug -> house hub -> RTU -> Power Company
+        Power Company -> RTU -> house hub -> plug
 
     Future work:
-
+        Theoretical standards

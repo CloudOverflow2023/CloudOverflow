@@ -1,5 +1,8 @@
 import csv
 from HouseClass import House
+
+main_output = []
+
 #accesses the csv file data (meaning the power grids data and from that we are going to calc total load and generation)
 with open('mock_data.csv', newline = '') as csvfile:
     csvreader = csv.reader(csvfile)
@@ -12,14 +15,19 @@ def power_state(): # during the times before 8:30am and after 6pm gigawatt can b
                 hr = row[0]
             if ((int(hr)) < 8):
                 print ((int(hr)), "can discharge")
+                main_output.append([(int(hr)), "can discharge"])
             elif((int(hr)) >= 18):
                 print ((int(hr)), "can discharge")
+                main_output.append([(int(hr)), "can discharge"])
             elif((9) <= int(hr) < (17)):
                 print ((int(hr)), "can charge")
+                main_output.append([(int(hr)), "can charge"])
             elif((8) <= int(hr) < (9)):
                 print ((int(hr)), "idling")
+                main_output.append([(int(hr)), "idling"])
             elif((17) <= int(hr) < (18)):
                 print ((int(hr)), "can idling")
+                main_output.append([(int(hr)), "can idling"])
             """else:
                 return False"""
 def can_sell_power(): #During the hr 6pm to early morning power can be sold to the grid reads from the csv file
@@ -48,4 +56,5 @@ def main():#main
     if(randHouse.HomeOwnersLimit <= randHouse.CurrentChargeStatusPercentage):
         if((can_discharge())):
             print(can_sell_power())""" 
+    print(main_output)
 main()
