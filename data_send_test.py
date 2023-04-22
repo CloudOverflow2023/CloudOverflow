@@ -39,7 +39,7 @@
 
             virtual houses (aka batterys == "idle", "power", Or "charge" )
 
-"""
+
 class RTU:
     def __init__(self):
         #Can equal "idle", "power", Or "charge"
@@ -75,6 +75,47 @@ def main():
     print(TeslaModel3.macaddress)
 
     print(TeslaModel3.power)
+
+
+"""
+
+import random
+class House:
+    def __init__(self):
+        #0.58677
+        self.TotalChargePotential = 0.58677
+        self.CurrentChargeStatus = 0.3293
+        self.CurrentChargeStatusPercentage = int(round(((self.CurrentChargeStatus)/(self.TotalChargePotential))*100, 0))
+
+        #from ~20 - ~80
+        self.HomeOwnersLimit = 20
+
+    def HouseDataShuffle(self):
+        print("This is from the class")
+        self.TotalChargePotential = round((random.uniform(0.5, 0.58677)),5)
+        self.CurrentChargeStatus = round((random.uniform(0, self.TotalChargePotential)),5)
+        self.CurrentChargeStatusPercentage = int(round(((self.CurrentChargeStatus)/(self.TotalChargePotential))*100, 0))
+
+    
+
+def main():
+
+    print(round((random.uniform(0.5, 0.58677)),5))
+
+    
+
+    print("Hello")
+    WhiteHouse = House()
+
+    print(WhiteHouse.TotalChargePotential)
+    print(WhiteHouse.CurrentChargeStatus)
+    print(WhiteHouse.CurrentChargeStatusPercentage)
+
+    WhiteHouse.HouseDataShuffle()
+
+    print(WhiteHouse.TotalChargePotential)
+    print(WhiteHouse.CurrentChargeStatus)
+    print(WhiteHouse.CurrentChargeStatusPercentage)
 
 
 
