@@ -9,7 +9,7 @@ def total_grid_power():
 ###########################
 
 ##power managing functions##
-def can_discharge(): # if the total load is greater than the total generation then the RTU can discharge to the grid
+def can_discharge(): # during the times before 8:30am and after 6pm gigawatt can be discharged from the house to the grid
     for row in csvreader:
         time = row[0]
         if (time >= 64800) or (time < 30600):
@@ -17,7 +17,7 @@ def can_discharge(): # if the total load is greater than the total generation th
         else:
             return False
         
-def can_charge(): # if the total generation is greater than the total load then the RTU can charge from the grid
+def can_charge(): # From 9am to 5:30pm power can be charged from the grid to the house
     for row in csvreader:
         time = row[0]
         if (32400 <= time <= 63000):
@@ -25,10 +25,10 @@ def can_charge(): # if the total generation is greater than the total load then 
         else:
             return False
 
-def can_sell_power():# during the hr 6pm to early morning power can be sold to the grid reads from the csv file
+def can_sell_power(): #During the hr 6pm to early morning power can be sold to the grid reads from the csv file
     end_flag = False
     for row in csvreader:
-        megawatt = row[1]
+        megawatt = row[1] #this will get the power grids megawattage the 22000 is when we want a house to sell to the grid
         if(megawatt >= 22000):
             end_flag = True
     return end_flag
