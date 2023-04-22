@@ -3,7 +3,7 @@
       #|.-"""""-.| |----|
       #||       || | == |
       #||       || |----| Team: Cloud Overflow (Hackathon 2023)
-      #|'-.....-'| |::::|
+      #|'-.....-'| |::::|   main editor: Brendan Chermack
       #`"")---(""` |___.|
      #/:::::::::::\" _  "
     #/:::=======:::\`\`\
@@ -51,9 +51,9 @@ def can_sell_power(): #During the hr 6pm to early morning power can be sold to t
 
 def main():#main
     exHouse = House()#creates a house object
-    """if(exHouse.HomeOwnersLimit >= exHouse.CurrentChargeStatusPercentage):# as long as the the min charge limit is less than the charge percentage it will check if power can be discharged and then sold
+    if(exHouse.HomeOwnersLimit >= exHouse.CurrentChargeStatusPercentage):# as long as the the min charge limit is less than the charge percentage it will check if power can be discharged and then sold
         if(power_state()):
-            print(can_sell_power())"""
+            print(can_sell_power())
     power_state()
     """randHouse = House()#creates a house object
     randHouse.HouseDataShuffle()#randomizes the data for the house
