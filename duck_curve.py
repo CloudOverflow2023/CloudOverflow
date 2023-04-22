@@ -14,7 +14,12 @@ def can_sell_power():# during the hr 6pm to early morning power can be sold to t
         megawatt = row[1]
         if(megawatt >= 22000):
             end_flag = True
-    return can_sell_power
+    return end_flag
 
 def idle():# this is during times 8:30am to 9am and 5:30pm to 6pm
-    return idle
+    for row in csvreader:
+        time = row[0]
+        if (30600 <= time <= 32400) or (63000 <= time <= 64800):
+            return True
+        else:
+            return False
