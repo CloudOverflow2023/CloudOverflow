@@ -1,14 +1,34 @@
 # CloudOverflow
+
+# Project Title
+
 OSI Hackathon Project
 
-
-1. Intro – Talk about your idea and the specific problem you are trying to solve.
+# Table of Contents
+1. About – Talk about your idea and the specific problem you are trying to solve.
     The problem we are trying to address is flattening the duck curve.
-    
+
 2. Demo – Show off what you have achieved in the hackathon.
 3. Looking forward – Talk about how you would continue to develop the project given more time and your vision 
 for a more complete tool.
 4. Technologies – Talk about any frameworks/libraries you use and why you chose them.
+
+# About
+
+# Demo
+## data_create_test.py 
+- Creates data that we could be getting from the grid in mW, total load on the grid
+- Manually put in the data
+- Based it on California mW 
+<a href = "https://www.energy.gov/eere/articles/confronting-duck-curve-how-address-over-generation-solar-energy">
+ <img src="./readme_resources/duck_curve_graph.jpg">
+ </a>
+- 
+
+# Looking Forward
+
+# Technologies
+
 
 
 Overview
