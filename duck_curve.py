@@ -8,6 +8,23 @@ def total_grid_power():
     return total_grid_power
 ###########################
 
+##power managing functions##
+def can_discharge(): # if the total load is greater than the total generation then the RTU can discharge to the grid
+    for row in csvreader:
+        time = row[0]
+        if (time >= 64800) or (time < 30600):
+            return True
+        else:
+            return False
+        
+def can_charge(): # if the total generation is greater than the total load then the RTU can charge from the grid
+    for row in csvreader:
+        time = row[0]
+        if (32400 <= time <= 63000):
+            return True
+        else:
+            return False
+
 def can_sell_power():# during the hr 6pm to early morning power can be sold to the grid reads from the csv file
     end_flag = False
     for row in csvreader:
