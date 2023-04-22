@@ -62,18 +62,18 @@ Time = 0
 MW_MegaWatts = 22000
 
 #Originally a while 
-while Time <= 1440:
-    if Time%14.4 == 0:
-        print(Time/144)
+while Time <= 24:
+    """if Time%14.4 == 0:
+        print(Time/144)"""
             
     
     chat_context_list = create_list_from_csv(filename)
-    if 0 <= Time < 510:
+    if 0 <= Time < 9:
         MW_MegaWatts = 22000
-    elif 510 <= Time < 750:
-        MW_MegaWatts -= 25.2
-    elif 750 <= Time < 1080:
-        MW_MegaWatts += 30.6
+    elif 9 <= Time < 13:
+        MW_MegaWatts -= 1512
+    elif 17 <= Time < 18:
+        MW_MegaWatts += 1836
 
         
         
