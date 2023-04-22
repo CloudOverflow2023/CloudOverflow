@@ -12,11 +12,13 @@ def can_discharge(): # during the times before 8:30am and after 6pm gigawatt can
                 min = row[0]
                 #print(min)
             if (int(min) < 510):
-                print
+                print ((float(min))/60)
+                print ("can discharge")
             if(int(min) >= 1080):
-                return True
-            else:
-                return False
+                print ((float(min))/60)
+                print ("can discharge")
+            """else:
+                return False"""
    
 def can_charge(): # From 9am to 5:30pm power can be charged from the grid to the house
     with open('mock_data.csv', newline = '') as csvfile:
@@ -51,17 +53,17 @@ def idle():# this is during times 8:30am to 9am and 5:30pm to 6pm
                 return True
             else:
                 return False
+def main():
+    exHouse = House()
+    if(exHouse.HomeOwnersLimit <= exHouse.CurrentChargeStatusPercentage):
+        if(can_discharge()):
+            print(can_sell_power())
 
-#exHouse = House()
-#if(exHouse.HomeOwnersLimit <= exHouse.CurrentChargeStatusPercentage):
-    #if(can_discharge()):
-        #print(can_sell_power())
-randHouse = House()
-randHouse.HouseDataShuffle()
-print(randHouse.HomeOwnersLimit)
-print(randHouse.CurrentChargeStatusPercentage)
-can_discharge()
-can_charge()
-if(randHouse.HomeOwnersLimit <= randHouse.CurrentChargeStatusPercentage):
-    if((can_discharge())):
-        print(can_sell_power())
+
+    randHouse = House()
+    randHouse.HouseDataShuffle()
+    print(randHouse.HomeOwnersLimit)
+    print(randHouse.CurrentChargeStatusPercentage)
+    if(randHouse.HomeOwnersLimit <= randHouse.CurrentChargeStatusPercentage):
+        if((can_discharge())):
+            print(can_sell_power())
