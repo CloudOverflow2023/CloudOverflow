@@ -78,14 +78,26 @@ def write_to_csv(a_list, filename):
         writer.writerows(a_list)
     #return true false depending if was able to write to file or not, could also just not return anything if feeling like being lazy
 
+Time = 0
+MW_MegaWatts = 22000
 
-
-while True:
-    now = datetime.datetime.now()
-    Time = str(now.strftime('%X')) 
+while Time <= 1440:
+    if Time%14.4 == 0:
+        print(Time/144)
+            
+    
     chat_context_list = create_list_from_csv(filename)
-    MW_MegaWatts = round(random.uniform(239, 241), 1)
+    if 0 <= Time < 510:
+        MW_MegaWatts = 22000
+    elif 510 <= Time < 750:
+        MW_MegaWatts -= 25.2
+    elif 750 <= Time < 1080:
+        MW_MegaWatts += 30.6
+
+        
+        
     chat_context_list.append({'Time':Time, 'MW_MegaWatts':MW_MegaWatts})
     write_to_csv(chat_context_list, filename)
-    time.sleep(1)
+    #time.sleep(1)
+    Time += 1
     
