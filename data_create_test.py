@@ -72,7 +72,7 @@ while Time <= 24:
         MW_MegaWatts = 22000
     elif 9 <= Time < 13:
         MW_MegaWatts -= 1512
-    elif 17 <= Time < 18:
+    elif 13 <= Time < 18:
         MW_MegaWatts += 1836
 
         
