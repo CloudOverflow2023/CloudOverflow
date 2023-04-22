@@ -37,16 +37,20 @@ def update_image(index):
     #window.after(delay, update_image, (index + 1) % len(images))
 
 # Start the image loop
-    print(main_output)
+    #print(main_output)
 
 frame = tk.Frame(window)
 frame.pack(side=tk.LEFT)
-text = tk.Text(frame, width=30, height=10)
+text = tk.Text(frame, width=40, height=10)
 text.pack()
-text.insert(tk.END, "This is some sample text.")
+text.insert(tk.END, "")
 
 n=0
-while n < 24:
+while n <= 24:
+
+    if n == 24:
+        n = 0
+
     #update_image(random.randint(0, 2))
     n=n+1
     print(n)
@@ -66,8 +70,10 @@ while n < 24:
     else:
         print("Something went wrong!")
 
+    #image_label.pack()
+    #time.sleep(1)
     image_label.pack()
-    #time.sleep(5)
+
 
 
 # Pack the image label into the window
