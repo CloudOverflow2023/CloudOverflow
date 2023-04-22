@@ -1,12 +1,8 @@
 import csv
+import HouseClass
 #accesses the csv file data (meaning the power grids data and from that we are going to calc total load and generation)
 with open('mock_data.csv', 'r') as csvfile:
     csvreader = csv.reader(csvfile)
-        
-## PUT IN WILLS PROGRAM ##
-def total_grid_power():
-    return total_grid_power
-###########################
 
 ##power managing functions##
 def can_discharge(): # during the times before 8:30am and after 6pm gigawatt can be discharged from the house to the grid
