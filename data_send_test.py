@@ -95,6 +95,7 @@ class House:
         self.TotalChargePotential = round((random.uniform(0.5, 0.58677)),5)
         self.CurrentChargeStatus = round((random.uniform(0, self.TotalChargePotential)),5)
         self.CurrentChargeStatusPercentage = int(round(((self.CurrentChargeStatus)/(self.TotalChargePotential))*100, 0))
+        self.HomeOwnersLimit = int(round((random.uniform(20, 80)),0))
 
     
 
@@ -110,12 +111,15 @@ def main():
     print(WhiteHouse.TotalChargePotential)
     print(WhiteHouse.CurrentChargeStatus)
     print(WhiteHouse.CurrentChargeStatusPercentage)
+    print(WhiteHouse.HomeOwnersLimit)
 
     WhiteHouse.HouseDataShuffle()
 
     print(WhiteHouse.TotalChargePotential)
     print(WhiteHouse.CurrentChargeStatus)
     print(WhiteHouse.CurrentChargeStatusPercentage)
+    print(WhiteHouse.HomeOwnersLimit)
+
 
 
 
