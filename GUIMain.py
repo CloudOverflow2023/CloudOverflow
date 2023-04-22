@@ -3,6 +3,8 @@ from PIL import ImageTk, Image
 import time
 import random
 
+from duck_curve import main_output
+
 
 
 counter = 0
@@ -28,13 +30,23 @@ def update_image(index):
     #window.after(delay, update_image, (index + 1) % len(images))
 
 # Start the image loop
+    print(main_output)
 
 n=0
 while n < 24:
-    update_image(random.randint(0, 2))
+    #update_image(random.randint(0, 2))
     n=n+1
     print(n)
     input("")
+    if main_output[n][1] == 'can discharge':
+        update_image(2)
+    elif main_output[n][1] == 'can charge':
+        update_image(0)
+    elif main_output[n][1] == 'idling':
+        update_image(1)
+    else:
+        print("Something went wrong!")
+
     image_label.pack()
     #time.sleep(5)
 
