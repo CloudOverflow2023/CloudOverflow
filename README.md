@@ -31,39 +31,13 @@ Overview
 
 Business Aspects:
 
-- 
+- Hardware one time fee
+- Discount on electricity bill
+- Sell Load
+- Charge based on Load
+
+SOLUTION :
+
+    Hardware
 
 
-
-
-
-
-
-
-TO ADD
-    Info on terms:
-        FEP:
-        RTU: Stands for remote terminal unit. Monitors and or controls field devices and reports back to a power plant.
-        Generation
-        Load
-        Idle
-        Charge
-        Discharge
-        Duck Curve
-        House Data
-        Grid data
-        IOT
-
-    Selling point:
-        Scalability
-        Mudularity
-
-    Drawings/pictures/diagrams:
-        four prong outlet with No control, medium control, full control button
-        plug -> house hub -> RTU -> Power Company
-        Power Company -> RTU -> house hub -> plug
-
-    Future work:
-        Theoretical standards
-        APIs that we could plug into
-        Standards we could/should adhere to
