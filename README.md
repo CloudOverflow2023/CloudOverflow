@@ -142,3 +142,4 @@ We could :
 <h3>Calvin Schemeichal</h3>
 <h3>Sharveen Paramiswaran</h3>
 <h3>William Munnich</h3>
+</div>
