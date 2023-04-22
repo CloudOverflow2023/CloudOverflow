@@ -1,4 +1,7 @@
 # CloudOverflow
+
+# Project Title
+
 OSI Hackathon Project
 
 
@@ -31,6 +34,23 @@ for a more complete tool.
 for a more complete tool.
 4. Technologies – Talk about any frameworks/libraries you use and why you chose them.
 
+# About
+
+# Demo
+## data_create_test.py 
+- Creates data that we could be getting from the grid in mW, total load on the grid
+- Manually put in the data
+- Based it on California mW 
+<a href = "https://www.energy.gov/eere/articles/confronting-duck-curve-how-address-over-generation-solar-energy">
+ <img src="./readme_resources/duck_curve_graph.jpg">
+ </a>
+- 
+
+# Looking Forward
+
+# Technologies
+
+
 
 Overview
 - we have many devices at home that charge throughout the day and thats it
@@ -52,13 +72,10 @@ Overview
 
 Business Aspects:
 
-- 
-
-
-
-
-
-
+- Hardware one time fee
+- Discount on electricity bill
+- Sell Load
+- Charge based on Load
 
 
 TO ADD
@@ -96,3 +113,4 @@ TO ADD
 <h3>Calvin Schemeichal</h3>
 <h3>Sharveen Paramiswaran</h3>
 <h3>William Munnich</h3>
+>>>>>>> main
