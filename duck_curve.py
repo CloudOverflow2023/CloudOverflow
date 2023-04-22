@@ -1,51 +1,66 @@
+      #           .----.
+      #.---------. | == |
+      #|.-"""""-.| |----|
+      #||       || | == |
+      #||       || |----| Team: Cloud Overflow (Hackathon 2023)
+      #|'-.....-'| |::::|   main editor: Brendan Chermack
+      #`"")---(""` |___.|
+     #/:::::::::::\" _  "
+    #/:::=======:::\`\`\
+ #`"""""""""""""`  '-'
 import csv
 from HouseClass import House
+
+main_output = []
+
 #accesses the csv file data (meaning the power grids data and from that we are going to calc total load and generation)
-with open('mock_data.csv', 'r') as csvfile:
+with open('mock_data.csv', newline = '') as csvfile:
     csvreader = csv.reader(csvfile)
-
-##power managing functions##
-def can_discharge(): # during the times before 8:30am and after 6pm gigawatt can be discharged from the house to the grid
-    for row in csvreader:
-        time = row[0]
-        if (time >= 64800) or (time < 30600):
-            return True
-        else:
-            return False
-        
-def can_charge(): # From 9am to 5:30pm power can be charged from the grid to the house
-    for row in csvreader:
-        time = row[0]
-        if (32400 <= time <= 63000):
-            return True
-        else:
-            return False
-
+##power state function##
+def power_state(): # decides the appropriate action during specific times of the day following the duck curve
+    with open('mock_data.csv', newline = '') as csvfile:
+        csvreader = csv.reader(csvfile)
+        for row in csvreader:
+            if len(row) > 0:
+                hr = row[0]
+            if ((int(hr)) < 8):
+                print ((int(hr)), "can discharge")
+                main_output.append([(int(hr)), "can discharge"])
+            elif((int(hr)) >= 18):
+                print ((int(hr)), "can discharge")
+                main_output.append([(int(hr)), "can discharge"])
+            elif((9) <= int(hr) < (17)):
+                print ((int(hr)), "can charge")
+                main_output.append([(int(hr)), "can charge"])
+            elif((8) <= int(hr) < (9)):
+                print ((int(hr)), "idling")
+                main_output.append([(int(hr)), "idling"])
+            elif((17) <= int(hr) < (18)):
+                print ((int(hr)), "idling")
+                main_output.append([(int(hr)), "idling"])
 def can_sell_power(): #During the hr 6pm to early morning power can be sold to the grid reads from the csv file
     end_flag = False
-    for row in csvreader:
-        megawatt = row[1] #this will get the power grids megawattage the 22000 is when we want a house to sell to the grid
-        if(megawatt >= 22000):
-            end_flag = True
+    with open('mock_data.csv', newline = '') as csvfile:
+        csvreader = csv.reader(csvfile)
+        for row in csvreader:
+            if len(row) >= 1:
+                megawatt = row[1] #this will get the power grids megawattage the 22000 is when we want a house to sell to the grid
+                if((float(megawatt)) >= 22000):
+                    end_flag = True
     return end_flag
 
-def idle():# this is during times 8:30am to 9am and 5:30pm to 6pm
-    for row in csvreader:
-        time = row[0]
-        if (30600 <= time <= 32400) or (63000 <= time <= 64800):
-            return True
-        else:
-            return False
-        
-exHouse = House()
-if(exHouse.HomeOwnersLimit <= exHouse.CurrentChargeStatusPercentage):
-    if(can_discharge()):
-        print(can_sell_power())
-    
-randHouse = House()
-randHouse.HouseDataShuffle()
-if(randHouse.HomeOwnersLimit <= randHouse.CurrentChargeStatusPercentage):
-    if(can_discharge()):
-        print(can_sell_power())
-
-
+def main():#main
+    exHouse = House()#creates a house object
+    if(exHouse.HomeOwnersLimit >= exHouse.CurrentChargeStatusPercentage):# as long as the the min charge limit is less than the charge percentage it will check if power can be discharged and then sold
+        if(power_state()):
+            print(can_sell_power())
+    power_state()
+    """randHouse = House()#creates a house object
+    randHouse.HouseDataShuffle()#randomizes the data for the house
+    print(randHouse.HomeOwnersLimit)
+    print(randHouse.CurrentChargeStatusPercentage)
+    if(randHouse.HomeOwnersLimit <= randHouse.CurrentChargeStatusPercentage):
+        if((can_discharge())):
+            print(can_sell_power())""" 
+    print(main_output)
+main()

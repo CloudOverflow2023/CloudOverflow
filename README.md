@@ -1,5 +1,35 @@
 # CloudOverflow
+
+# Project Title
+
 OSI Hackathon Project
+
+# Table of Contents
+1. About – Talk about your idea and the specific problem you are trying to solve.
+    The problem we are trying to address is flattening the duck curve.
+
+2. Demo – Show off what you have achieved in the hackathon.
+3. Looking forward – Talk about how you would continue to develop the project given more time and your vision 
+for a more complete tool.
+4. Technologies – Talk about any frameworks/libraries you use and why you chose them.
+
+# About
+
+# Demo
+## data_create_test.py 
+- Creates data that we could be getting from the grid in mW, total load on the grid
+- Manually put in the data
+- Based it on California mW 
+<a href = "https://www.energy.gov/eere/articles/confronting-duck-curve-how-address-over-generation-solar-energy">
+ <img src="./readme_resources/duck_curve_graph.jpg">
+ </a>
+- 
+
+# Looking Forward
+
+# Technologies
+
+
 
 Overview
 - we have many devices at home that charge throughout the day and thats it
@@ -21,4 +51,37 @@ Overview
 
 Business Aspects:
 
-- 
+- Hardware one time fee
+- Discount on electricity bill
+- Sell Load
+- Charge based on Load
+
+
+TO ADD
+    Info on terms:
+        FEP:
+        RTU: Stands for remote terminal unit. Monitors and or controls field devices and reports back to a power plant.
+        Generation
+        Load
+        Idle
+        Charge
+        Discharge
+        Duck Curve
+        House Data
+        Grid data
+        IOT
+
+    Selling point:
+        Scalability
+        Mudularity
+
+    Drawings/pictures/diagrams:
+        four prong outlet with No control, medium control, full control button
+        plug -> house hub -> RTU -> Power Company
+        Power Company -> RTU -> house hub -> plug
+
+    Future work:
+        Theoretical standards
+        APIs that we could plug into
+        Standards we could/should adhere to
+>>>>>>>>> Temporary merge branch 2
