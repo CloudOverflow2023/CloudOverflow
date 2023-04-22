@@ -41,7 +41,7 @@ class House:
     # You can keep it satic for testing and call shuffle to add variation in simulation testing.
     def HouseDataShuffle(self):
         #Here we are using the random.uniform function to choose new values within a small range (~15% variation)
-        self.TotalChargePotential = round((random.uniform(0.5, 0.58677)),5)
+        self.TotalChargePotential = round((random.uniform(0.5, 0.58677)),5)                                     
         self.CurrentChargeStatus = round((random.uniform(0, self.TotalChargePotential)),5)
         self.CurrentChargeStatusPercentage = int(round(((self.CurrentChargeStatus)/(self.TotalChargePotential))*100, 0))
         self.HomeOwnersLimit = int(round((random.uniform(20, 80)),0))
@@ -51,6 +51,7 @@ class House:
 """
 def main():
 
+    
     print(round((random.uniform(0.5, 0.58677)),5))
 
     
@@ -58,12 +59,15 @@ def main():
     print("Hello")
     WhiteHouse = House()
 
-    print(WhiteHouse.TotalChargePotential)
-    print(WhiteHouse.CurrentChargeStatus)
-    print(WhiteHouse.CurrentChargeStatusPercentage)
-    print(WhiteHouse.HomeOwnersLimit)
+    #static
+    print("TotalChargePotential in megawhats: ", WhiteHouse.TotalChargePotential)
+    print("The Current Charge status is: ", WhiteHouse.CurrentChargeStatus)
+    print("The Current Charge Status Percentage is: ", WhiteHouse.CurrentChargeStatusPercentage)
+    print("The Bottom acceptable limit charge percentage the owner has set is: ", WhiteHouse.HomeOwnersLimit)
 
+    #randomizez TotalChargePotential, CurrentChargeStatus, and HomeOwnersLimit
     WhiteHouse.HouseDataShuffle()
+
 
     print(WhiteHouse.TotalChargePotential)
     print(WhiteHouse.CurrentChargeStatus)
@@ -77,8 +81,8 @@ def main():
 if __name__ == "__main__":
     main()
 
-
 """
+
 
 
 

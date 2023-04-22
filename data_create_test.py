@@ -1,19 +1,4 @@
-"""
-From chat gpt OpenFMB CSV example:
 
-    Time,Grid_Voltage,Grid_Freq uency,Grid_Active_Power,Grid_Reactive_Pow er,Grid_Apparent_Power
-    0,240.1,60.0,100.0,50.0,150.0
-    1,240.2,60.2,110.0,60.0,170.0
-    2,240.3,60.4,120.0,70.0,190.0
-    3,240.4,60.6,130.0,80.0,210.0
-    4,240.5,60.8,140.0,90.0,230.0
-    5,240.6,61.0,150.0,100.0,250.0
-    
-        Time: 
-            This is the timestamp of the data point.
-        Grid_Voltage: 
-            This is the voltage of the grid at the given time.
-"""
       #           .----.
       #.---------. | == |
       #|.-"""""-.| |----|
@@ -38,15 +23,6 @@ From chat gpt OpenFMB CSV example:
 ⠀⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠁
 ⠀⠀⠙⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠁⠀
 ⠀⠀⠀⠈⠙⢿⣿⣿⣿⠿⠟⠛⠻⠿⣿⣿⣿⡿⠋⠀⠀⠀
-        Grid_Frequency: 
-            This is the frequency of the grid at the given time.
-        Grid_Active_Power: 
-            This is the amount of active power flowing through the grid at the given time.
-        Grid_Reactive_Power: 
-            This is the amount of reactive power flowing through the grid at the given time.
-        Grid_Apparent_Power: 
-            This is the amount of apparent power flowing through the grid at the given time.
-
 
 """
 import random
@@ -54,7 +30,9 @@ import time
 import csv
 import datetime
 
+#mock data is 24 hours, spaced out by one minute of approximate duck curve megawatts
 filename = 'mock_data.csv'
+#Fields are time in minuites from midnight ad megawatts in the grid
 fields = ['Time','MW_MegaWatts']
  
 def create_list_from_csv(filename):
@@ -78,21 +56,24 @@ def write_to_csv(a_list, filename):
         writer.writerows(a_list)
     #return true false depending if was able to write to file or not, could also just not return anything if feeling like being lazy
 
+#Time starts at 0 munutes from midnight
 Time = 0
+#megawatts is the same until 8:30 am, starts out at 22000
 MW_MegaWatts = 22000
 
-while Time <= 1440:
-    if Time%14.4 == 0:
-        print(Time/144)
+#Originally a while 
+while Time <= 24:
+    """if Time%14.4 == 0:
+        print(Time/144)"""
             
     
     chat_context_list = create_list_from_csv(filename)
-    if 0 <= Time < 510:
+    if 0 <= Time < 9:
         MW_MegaWatts = 22000
-    elif 510 <= Time < 750:
-        MW_MegaWatts -= 25.2
-    elif 750 <= Time < 1080:
-        MW_MegaWatts += 30.6
+    elif 9 <= Time < 13:
+        MW_MegaWatts -= 1512
+    elif 17 <= Time < 18:
+        MW_MegaWatts += 1836
 
         
         
