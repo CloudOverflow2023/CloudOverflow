@@ -10,7 +10,6 @@ def can_discharge(): # during the times before 8:30am and after 6pm gigawatt can
         for row in csvreader:
             if len(row) > 0:
                 min = row[0]
-                #print(min)
             if (int(min) < 510):
                 print ((float(min))/60)
                 print ("can discharge")
@@ -27,9 +26,10 @@ def can_charge(): # From 9am to 5:30pm power can be charged from the grid to the
             if len(row) > 0:
                 min = row[0]
                 if ((540) <= int(min) <= (1050)):
-                    return True
-                else:
-                    return False
+                    print ((float(min))/60)
+                    print ("can charge")
+                """else:
+                    return False"""
 
 def can_sell_power(): #During the hr 6pm to early morning power can be sold to the grid reads from the csv file
     end_flag = False
@@ -46,24 +46,29 @@ def idle():# this is during times 8:30am to 9am and 5:30pm to 6pm
     with open('mock_data.csv', newline = '') as csvfile:
         csvreader = csv.reader(csvfile)
         for row in csvreader:
-            time = row[0]
-            if ((510) <= time <= (540)):
-                return True
-            if((1050) <= time <= (1080)):
-                return True
-            else:
-                return False
-def main():
-    exHouse = House()
-    if(exHouse.HomeOwnersLimit <= exHouse.CurrentChargeStatusPercentage):
+            if len(row) > 0:
+                min = row[0]
+                if ((510) <= int(min) <= (540)):
+                    print ((float(min))/60)
+                    print ("idling")
+                if((1050) <= int(min) <= (1080)):
+                    print ((float(min))/60)
+                    print ("idling")
+                """else:
+                    return False"""
+def main():#main
+    exHouse = House()#creates a house object
+    if(exHouse.HomeOwnersLimit >= exHouse.CurrentChargeStatusPercentage):# as long as the the min charge limit is less than the charge percentage it will check if power can be discharged and then sold
         if(can_discharge()):
             print(can_sell_power())
-
-
-    randHouse = House()
-    randHouse.HouseDataShuffle()
+    can_discharge()
+    can_charge()
+    idle()
+    """randHouse = House()#creates a house object
+    randHouse.HouseDataShuffle()#randomizes the data for the house
     print(randHouse.HomeOwnersLimit)
     print(randHouse.CurrentChargeStatusPercentage)
     if(randHouse.HomeOwnersLimit <= randHouse.CurrentChargeStatusPercentage):
         if((can_discharge())):
-            print(can_sell_power())
+            print(can_sell_power())""" 
+main()
