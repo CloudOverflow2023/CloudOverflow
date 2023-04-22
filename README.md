@@ -1,6 +1,16 @@
 # CloudOverflow
 OSI Hackathon Project
 
+
+1. Intro – Talk about your idea and the specific problem you are trying to solve.
+    The problem we are trying to address is flattening the duck curve.
+    
+2. Demo – Show off what you have achieved in the hackathon.
+3. Looking forward – Talk about how you would continue to develop the project given more time and your vision 
+for a more complete tool.
+4. Technologies – Talk about any frameworks/libraries you use and why you chose them.
+
+
 Overview
 - we have many devices at home that charge throughout the day and thats it
 - Problem is that the duck curve shows when there is a peak time of solar and wind energy GENERATED is during the times of 9 AM to 5:30 PM and there is nothing to load it 
@@ -30,4 +40,4 @@ SOLUTION :
 
     Hardware
 
-    - Connected via Wifi 
+
