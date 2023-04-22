@@ -1,4 +1,4 @@
-#Mannaged by Calvin Schmeichel
+#Mannaged by Calvin Schmeichel | Cloud Overflow | Hackathon 2023
 """
                  ⣀⣀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⡿⠀⠀⠀⠀⠀⠀
@@ -14,91 +14,41 @@
 ⠀⠀⠙⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠁⠀
 ⠀⠀⠀⠈⠙⢿⣿⣿⣿⠿⠟⠛⠻⠿⣿⣿⣿⡿⠋⠀⠀⠀
 
-
-        Time:
-            This is the timestamp of the data point.
-        Grid_Voltage: 
-            This is the voltage of the grid at the given time.
-        Grid_Frequency:
-            This is the frequency of the grid at the given time.
-        Grid_Active_Power:
-            This is the amount of active power flowing through the grid at the given time.
-        Grid_Reactive_Power:
-            This is the amount of reactive power flowing through the grid at the given time.
-        Grid_Apparent_Power:
-            This is the amount of apparent power flowing through the grid at the given time.
-
-            
-            
-            Measure load in megawatts y axis
-            time x axis
-
-            Cash incentive to increase RTU's per house for more data
-
-            custom smart house outlets to handle reachargables (Rechargables Plug)
-
-            virtual houses (aka batterys == "idle", "power", Or "charge" )
-
-
-class RTU:
-    def __init__(self):
-        #Can equal "idle", "power", Or "charge"
-        self.status = "idle"
-        self.macaddress = "00-00-00-00-00-00"
-        #We are using "Power" as a umbrella term for currency
-        self.power = 0
-
-
-    def CalculatePotentialPowerOutput(self):
-
-        #Insert Generation formula here
-        
-        return
-
-
-
-def main():
-    import csv
-
-    with open('calvinstestdata.csv', 'r') as read_obj:
-
-        csv_reader = csv.reader(read_obj)
-        list_of_csv = list(csv_reader)
-
-    print(list_of_csv)
-
-    print(list_of_csv[15][1])
-
-    TeslaModel3 = RTU()
-
-    print(TeslaModel3.status)
-    print(TeslaModel3.macaddress)
-
-    print(TeslaModel3.power)
-
-
 """
 
+#We use the random library to add variation to the house data
 import random
+
+#We are using a class system to store data realated to a home
+# This also allows us to easlly scale to a bigger simulation with more 
+# randomly generated homes
 class House:
+    #We first define the variables for the class
     def __init__(self):
-        #0.58677
+        
+        #Total Charge Potential means the maximum charge the house can hold in Megawatts (MW)
         self.TotalChargePotential = 0.58677
+        #Current Charge Status is the current house charge amount in Megawatts (MW)
         self.CurrentChargeStatus = 0.3293
+        #Current Charge Status Percentage is the current house charge in percentage %
         self.CurrentChargeStatusPercentage = int(round(((self.CurrentChargeStatus)/(self.TotalChargePotential))*100, 0))
 
-        #from ~20 - ~80
+        #The Home Owners Limit is the floor of how much the owner is willing to send to the grid
+        #from ~20 - ~80 EX: 20% means they are willing to send 80% of their total charges
         self.HomeOwnersLimit = 20
 
+    #This is the sub-class function to shuffle the static house data from above.
+    # You can keep it satic for testing and call shuffle to add variation in simulation testing.
     def HouseDataShuffle(self):
-        print("This is from the class")
+        #Here we are using the random.uniform function to choose new values within a small range (~15% variation)
         self.TotalChargePotential = round((random.uniform(0.5, 0.58677)),5)
         self.CurrentChargeStatus = round((random.uniform(0, self.TotalChargePotential)),5)
         self.CurrentChargeStatusPercentage = int(round(((self.CurrentChargeStatus)/(self.TotalChargePotential))*100, 0))
         self.HomeOwnersLimit = int(round((random.uniform(20, 80)),0))
 
     
-
+#Main here is just used for testing (:
+"""
 def main():
 
     print(round((random.uniform(0.5, 0.58677)),5))
@@ -126,6 +76,9 @@ def main():
 #This is so we can import the functions in this program in other code without having to run the main function
 if __name__ == "__main__":
     main()
+
+
+"""
 
 
 
