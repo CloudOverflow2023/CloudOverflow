@@ -39,9 +39,11 @@ def update_image(index):
 # Start the image loop
     #print(main_output)
 
+
 frame = tk.Frame(window)
 frame.pack(side=tk.LEFT)
 text = tk.Text(frame, width=40, height=10)
+text.configure(font=("Arial", 30))
 text.pack()
 text.insert(tk.END, "")
 
