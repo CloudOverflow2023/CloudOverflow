@@ -70,3 +70,5 @@ TO ADD
 
     Future work:
         Theoretical standards
+        APIs that we could plug into
+        Standards we could/should adhere to
