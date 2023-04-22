@@ -39,8 +39,8 @@ Business Aspects:
 
 TO ADD
     Info on terms:
-        Fep
-        RTU
+        FEP:
+        RTU: Stands for remote terminal unit. Monitors and or controls field devices and reports back to a power plant.
         Generation
         Load
         Idle
@@ -64,3 +64,4 @@ TO ADD
         Theoretical standards
         APIs that we could plug into
         Standards we could/should adhere to
+>>>>>>>>> Temporary merge branch 2
