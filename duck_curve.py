@@ -1,3 +1,13 @@
+      #           .----.
+      #.---------. | == |
+      #|.-"""""-.| |----|
+      #||       || | == |
+      #||       || |----| Team: Cloud Overflow (Hackathon 2023)
+      #|'-.....-'| |::::|
+      #`"")---(""` |___.|
+     #/:::::::::::\" _  "
+    #/:::=======:::\`\`\
+ #`"""""""""""""`  '-'
 import csv
 from HouseClass import House
 
@@ -6,8 +16,8 @@ main_output = []
 #accesses the csv file data (meaning the power grids data and from that we are going to calc total load and generation)
 with open('mock_data.csv', newline = '') as csvfile:
     csvreader = csv.reader(csvfile)
-##power managing functions##
-def power_state(): # during the times before 8:30am and after 6pm gigawatt can be discharged from the house to the grid
+##power state function##
+def power_state(): # decides the appropriate action during specific times of the day following the duck curve
     with open('mock_data.csv', newline = '') as csvfile:
         csvreader = csv.reader(csvfile)
         for row in csvreader:
@@ -26,10 +36,8 @@ def power_state(): # during the times before 8:30am and after 6pm gigawatt can b
                 print ((int(hr)), "idling")
                 main_output.append([(int(hr)), "idling"])
             elif((17) <= int(hr) < (18)):
-                print ((int(hr)), "can idling")
-                main_output.append([(int(hr)), "can idling"])
-            """else:
-                return False"""
+                print ((int(hr)), "idling")
+                main_output.append([(int(hr)), "idling"])
 def can_sell_power(): #During the hr 6pm to early morning power can be sold to the grid reads from the csv file
     end_flag = False
     with open('mock_data.csv', newline = '') as csvfile:
@@ -47,8 +55,6 @@ def main():#main
         if(power_state()):
             print(can_sell_power())"""
     power_state()
-    """can_charge()
-    idle()"""
     """randHouse = House()#creates a house object
     randHouse.HouseDataShuffle()#randomizes the data for the house
     print(randHouse.HomeOwnersLimit)
