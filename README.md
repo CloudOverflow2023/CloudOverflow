@@ -22,3 +22,33 @@ Overview
 Business Aspects:
 
 - 
+
+
+
+
+
+
+
+
+TO ADD
+    Info on terms:
+        Fep
+        RTU
+        Generation
+        Load
+        Idle
+        Charge
+        Discharge
+        Duck Curve
+        House Data
+        Grid data
+        IOT
+
+    Selling point:
+        Scalability
+        Mudularity
+
+    
+
+    Future work:
+
