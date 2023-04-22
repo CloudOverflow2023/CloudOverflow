@@ -2,9 +2,30 @@
 OSI Hackathon Project
 
 
+<h2 align="left">
+Table of Contents
+</h2>
+
+<div align="left">
+<b>1. Intro:</b> Talk about your idea and the    specific problem you are trying to solve.
+</div>
+
+<div align="left">
+2. Demo – Show off what you have achieved in the hackathon.
+</div>
+
+<div align="left">
+3. Looking forward – Talk about how you would continue to develop the project given more time and your vision 
+for a more complete tool.
+</div>
+
+<div align="left">
+4. Technologies – Talk about any frameworks/libraries you use and why you chose them.
+</div>
+
 1. Intro – Talk about your idea and the specific problem you are trying to solve.
     The problem we are trying to address is flattening the duck curve.
-    
+    ![duck curve example from California](./readme_resources/duck_curve_graph.jpg)
 2. Demo – Show off what you have achieved in the hackathon.
 3. Looking forward – Talk about how you would continue to develop the project given more time and your vision 
 for a more complete tool.
@@ -67,3 +88,11 @@ TO ADD
         Theoretical standards
         APIs that we could plug into
         Standards we could/should adhere to
+
+
+<h2><b>Contributers</b></h>
+<h3>Abdinasir Mumin</h3>
+<h3>Brenden Chermack</h3>
+<h3>Calvin Schemeichal</h3>
+<h3>Sharveen Paramiswaran</h3>
+<h3>William Munnich</h3>
