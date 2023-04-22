@@ -74,7 +74,7 @@ A biderectional four prong plug that connects to a home hub, which is controlled
 - Take the proccessed data of the duck curve and visually display when Power can be <span style="color:lightgreen">discharged</span>, <span style="color:red">charged</span>, or stay <span style="color:yellow">idle</span> (Not Charge or Sell)
 
 
-<div style="text-align:center"><img src="https://cdn.discordapp.com/attachments/1098777198455963779/1099426100549005392/GUIVideo3.GIF">
+<div style="text-align:center"><img align="center" src="https://cdn.discordapp.com/attachments/1098777198455963779/1099426100549005392/GUIVideo3.GIF">
 <h6 align="center">This is our code running, representing a single household</h6>
 </div>
 
