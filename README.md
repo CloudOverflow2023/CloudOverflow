@@ -21,4 +21,13 @@ Overview
 
 Business Aspects:
 
-- 
+- Hardware one time fee
+- Discount on electricity bill
+- Sell Load
+- Charge based on Load
+
+SOLUTION :
+
+    Hardware
+
+    - Connected via Wifi 
