@@ -36,14 +36,6 @@ Business Aspects:
 - Sell Load
 - Charge based on Load
 
-SOLUTION :
-
-    Hardware
-
-
-
-
-
 
 TO ADD
     Info on terms:
