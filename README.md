@@ -138,7 +138,7 @@ We could :
 
 <div style="text-align:center"><h2><b>7. Contributers</b></h>
 <h3>Abdinasir Mumin</h3>
-<h3>Brenden Chermack</h3>
+<h3>Brendan Chermack</h3>
 <h3>Calvin Schemeichal</h3>
 <h3>Sharveen Paramiswaran</h3>
 <h3>William Munnich</h3>
